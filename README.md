@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Frontend Mentor - Huddle landing page with alternating feature blocks solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Huddle landing page with alternating feature blocks challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/huddle-landing-page-with-alternating-feature-blocks-5ca5f5981e82137ec91a5100). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+(https://prnt.sc/UyN9b3tdSGOS)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- Solution URL: [https://github.com/bap-ssbm/huddle_landing_page]
+- Live Site URL: [https://bap-ssbm.github.io/huddle_landing_page/]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## My process
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-framer-motion
 
-## Learn More
+**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### What I learned
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I learned quite alot about framer motion, useInview, useScroll functions. as well as the prop, whileInView.
+Also learned how to manipulate svgs, which were pretty difficult to do.
 
-### Code Splitting
+```html
+ <motion.div ref={ref} style={{translateX : isInView ? 0 : 1, zIndex: 1}} className="middle-section">
+            <Card cardisInView={cardisInView} cardData={cardData[0]} type="left" />
+            <Card cardisInView={cardisInView}  cardData={cardData[1]} type="right" />
+            <Card cardisInView={cardisInView}  cardData={cardData[2]} type="left" />
+            <motion.div className="build-community-card" initial={{ y: 200, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.3, duration: 0.8 }}>
+                <h1>
+                    Ready To Build Your Community?
+                </h1>
+                <motion.button whileHover={{
+                    opacity: 0.4
+                }}>
+                    Get Started For Free
+                </motion.button>
+            </motion.div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+        </motion.div>
+    )
+```
 
-### Analyzing the Bundle Size
+i was pretty proud of this card component i made with react, just specifiying which type of card it was and then just stylizing it based on the info i put into the component.
+```css
+.icon-circle{
+    border: 1px white solid;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+    cursor: pointer;
+}
+```
+the icon circle i made was pretty cool
+```js
+  const { scrollYProgress } = useScroll();
+    let y = useTransform(scrollYProgress, [0, 1], ["0vh", "-100vh"]);
+    let opacity = useTransform(scrollYProgress, [0, .3], [1, 0]);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+  i literally just learned how to use this function useScrol and useTransform, but i got the hang of it from this project! Im proud of this one. i just read the documentation on framer's website
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Continued development
+perfecting this scroll animation, and other animatiosn in the future with framer-motion. It adds a little extra to the way the page looks, and its pretty awesome
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
