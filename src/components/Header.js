@@ -18,7 +18,7 @@ const opacityVaritant = {
 const Footer = () => {
     return (
         <div className="header">
-            <motion.div variants={opacityVaritant} initial="hidden" animate="visible">
+            <motion.div className = "logo" variants={opacityVaritant} initial="hidden" animate="visible">
                 <Logo />
             </motion.div>
             <motion.div className="header-btn-wrapper" variants={opacityVaritant} initial="hidden" animate="visible">

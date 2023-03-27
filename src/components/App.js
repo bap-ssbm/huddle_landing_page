@@ -30,7 +30,7 @@ function App() {
         <TopSection ></TopSection>
       </motion.div>
       <MiddleSection isInView={isInView}></MiddleSection>
-      <Footer></Footer>
+      <Footer viewportWidth={viewportWidth}></Footer>
       <div className="bg-img">
         {viewportWidth>768&&viewportWidth<1440?<BgSvg />:<BgSvgMobile/>}
       </div>

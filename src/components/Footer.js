@@ -17,12 +17,12 @@ const iconBorderVariant = {
     }
 }
 
-const Footer = () => {
+const Footer = ({viewportWidth}) => {
     const { scrollYProgress } = useScroll();
     let opacity = useTransform(scrollYProgress, [0.6, 0.9], [0, 1]);
    
     return (
-        <motion.div className="footer" style={{ opacity: opacity, zIndex:0}}>
+        <motion.div className="footer" style={{ opacity: viewportWidth>768&&opacity, zIndex:0}}>
             <div className="footer-logo">
                 <Logo />
             </div>
