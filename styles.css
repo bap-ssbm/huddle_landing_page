@@ -2,6 +2,8 @@ html {
     font-family: 'Open Sans', sans-serif;
     Font-size: 18px;
     color: hsl(192, 100%, 9%);
+    width: 100dvw;
+    overflow-x: hidden;
 }
 
 .practice{
@@ -196,12 +198,12 @@ button {
         flex-direction: column;
     }
     .logo{
-        width: 50%;
+        width: 40%;
     }
-    .logo>svg {
+    .logo>svg  {
         width: 300px;
-        scale: 0.6;
-        transform: translateY(3px) translateX(-100px);
+        scale: 0.5;
+        transform: translateY(-0px) translateX(-150px);
     }
 
     .bg-img {
